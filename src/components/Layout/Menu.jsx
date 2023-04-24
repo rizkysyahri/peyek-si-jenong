@@ -3,7 +3,20 @@ import { storeData, navigationData } from "../../data/dummy-data";
 
 const MenuPage = () => {
   const { image } = storeData;
+  const [active, setActive] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", isActive);
+
+    return () => {
+      window.removeEventListener("scroll", isActive);
+    };
+  }, []);
 
   function hamburgerClick() {
     setOpen(!open);
@@ -11,7 +24,11 @@ const MenuPage = () => {
 
   const classList = open ? "hamburger-active" : "";
   return (
-    <>
+    <div
+      className={`navbar ${
+        active ? "active" : ""
+      } fixed top-0 left-0 right-0 z-50`}
+    >
       <div className="container">
         <div className="flex items-center justify-between relative z-10">
           <div className="px-4">
@@ -39,7 +56,6 @@ const MenuPage = () => {
               className={`md:flex md:items-center md:pb-0 pb-10 absolute md:static text-center shadow-lg md:z-auto z-[-1] left-0 w-full md:w-auto cursor-pointer transition-all duration-500 ease-out md:shadow-none ${
                 open ? "top-20" : "top-[-490px]"
               }`}
-              style={{ backgroundColor: "white" }}
             >
               {navigationData.map((link) => (
                 <li
@@ -53,7 +69,7 @@ const MenuPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

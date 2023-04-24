@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,26 @@
 
 @layer base {
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  transition: 0.2s all ease-in;
+  -webkit-transition: 0.2s all ease-in;
+  -moz-transition: 0.2s all ease-in;
+  -ms-transition: 0.2s all ease-in;
+  -o-transition: 0.2s all ease-in;
+}
+
+.active {
+  @apply bg-white text-black;
+  
 }
 
 .hamburger-line {
@@ -34,12 +52,12 @@
   -o-transform: rotate(-45deg);
 }
 
+
 .text-truncate {
   overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
 }
-
 
 .marquee-text {
   display: inline-block;

@@ -6,6 +6,15 @@ import Footer from "../components/fragment/Footer";
 const StorePage = () => {
   return (
     <>
+      <div className="container mt-20">
+        <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {productList.items.map((item, index) => (
+            <Product {...item} key={index} />
+            // console.log(item.image)
+          ))}
+        </div>
+      </div>
+
       <div className="bg-black py-5 flex justify-center items-center">
         <div className="text-white flex marquee">
           <span className="text-4 xl antialiased font-medium hover:font-bold px-10 text-truncate">
@@ -17,15 +26,6 @@ const StorePage = () => {
           <span className="text-4 xl antialiased font-medium hover:font-bold px-10 text-truncate">
             NOW AVAILABLE
           </span>
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {productList.items.map((item, index) => (
-            <Product {...item} key={index} />
-            // console.log(item.image)
-          ))}
         </div>
       </div>
 
