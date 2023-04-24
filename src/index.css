@@ -25,7 +25,6 @@
 
 .active {
   @apply bg-white text-black;
-  
 }
 
 .hamburger-line {
@@ -51,7 +50,6 @@
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
 }
-
 
 .text-truncate {
   overflow: hidden;

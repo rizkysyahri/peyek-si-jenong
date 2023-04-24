@@ -1,5 +1,6 @@
 import * as React from "react";
 import { storeData, navigationData } from "../../data/dummy-data";
+import { Link } from "react-router-dom";
 
 const MenuPage = () => {
   const { image } = storeData;
@@ -24,11 +25,7 @@ const MenuPage = () => {
 
   const classList = open ? "hamburger-active" : "";
   return (
-    <div
-      className={`navbar ${
-        active ? "active" : ""
-      } fixed top-0 left-0 right-0 z-50`}
-    >
+    <div className={active ? "navbar active" : "navbar"} style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100 }}>
       <div className="container">
         <div className="flex items-center justify-between relative z-10">
           <div className="px-4">
@@ -62,7 +59,7 @@ const MenuPage = () => {
                   key={link.name}
                   className="nav-link group md:ml-8 md:my-0 my-7"
                 >
-                  <a href={link.id}>{link.name}</a>
+                  <Link to={link.url}>{link.name}</Link>
                 </li>
               ))}
             </ul>

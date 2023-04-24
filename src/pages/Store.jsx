@@ -6,6 +6,7 @@ import Footer from "../components/fragment/Footer";
 const StorePage = () => {
   return (
     <>
+    
       <div className="container mt-20">
         <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productList.items.map((item, index) => (
@@ -35,7 +36,7 @@ const StorePage = () => {
             <span className="text-base">EXCLUSIVE LOOK AT THE</span>
             <span className="block text-4xl font-bold mt-10">PEYEK IJO</span>
             <div className="py-5">
-              <button class="bg-gray-800 hover:bg-gray-900 text-white font-mono py-2 px-4 rounded-none">
+              <button className="bg-gray-800 hover:bg-gray-900 text-white font-mono py-2 px-4 rounded-none">
                 VIEW MORE
               </button>
             </div>
