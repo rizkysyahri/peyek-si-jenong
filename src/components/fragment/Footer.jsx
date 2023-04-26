@@ -1,9 +1,8 @@
 import React from "react";
-import { PeaceHand } from "iconoir-react";
 
 const Footer = () => {
   return (
-    <footer className="container py-5">
+    <footer className="container pt-5">
       <div className="mx-auto flex items-center justify-center tracking-wide ">
         <a href="" className="text-slate-400 underline underline-offset-4">
           FAQ
@@ -19,8 +18,7 @@ const Footer = () => {
       </div>
 
       <div className="mx-auto flex items-center justify-center py-4">
-        <PeaceHand className="mx-2 text-zinc-500" />
-        <span>PEYEK SI JENONG</span>
+        <span>© PEYEK SI JENONG</span>
       </div>
     </footer>
   );

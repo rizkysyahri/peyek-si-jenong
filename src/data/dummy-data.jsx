@@ -69,30 +69,26 @@ export const productList   = {
   items: [
     {
       id: "98c28",
-      image: peyek2,
+      image: peyek1,
       title: ` Peyek Keramat`,
-      subtitle: `MAU INI? Pesan saja`,
       price: "15.500",
     },
     {
       id: "09xu7",
       image: peyek2,
       title: ` Peyek Bandel`,
-      subtitle: `MAU INI? Pesan saja`,
       price: "15.500",
     },
     {
       id: "19xu2",
-      image: peyek2,
+      image: peyek3,
       title: ` Peyek Spicy`,
-      subtitle: `MAU INI? Pesan saja`,
       price: "15.500",
     },
     {
       id: "09xp0",
-      image: peyek2,
+      image: peyek4,
       title: ` Peyek Bule`,
-      subtitle: `MAU INI? Pesan saja`,
       price: "15.500",
     },
   ],

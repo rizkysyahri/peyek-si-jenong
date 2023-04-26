@@ -2,16 +2,21 @@ import Product from "../components/Layout/Products";
 import { productList } from "../data/dummy-data";
 import peyek3 from "../assets/peyek 3.png";
 import Footer from "../components/fragment/Footer";
+import Header from "./Header";
 
 const StorePage = () => {
   return (
     <>
-    
+      <Header />
       <div className="container mt-20">
         <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {productList.items.map((item, index) => (
-            <Product {...item} key={index} />
-            // console.log(item.image)
+            <Product {...item} key={index}>
+              <div className="flex flex-col justify-center items-center h-full">
+                <h2 className="text-lg font-medium mb-2 text-center">{item.title}</h2>
+                <p className="text-sm text-center">{item.price}</p>
+              </div>
+            </Product>
           ))}
         </div>
       </div>
@@ -47,7 +52,7 @@ const StorePage = () => {
         </div>
       </div>
 
-      <div className="">
+      <div>
         <Footer />
       </div>
     </>

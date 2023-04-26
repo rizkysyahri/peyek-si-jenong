@@ -1,6 +1,7 @@
 import * as React from "react";
 import { storeData, navigationData } from "../../data/dummy-data";
 import { Link } from "react-router-dom";
+import { Cart } from "iconoir-react";
 
 const MenuPage = () => {
   const { image } = storeData;
@@ -25,11 +26,14 @@ const MenuPage = () => {
 
   const classList = open ? "hamburger-active" : "";
   return (
-    <div className={active ? "navbar active" : "navbar"} style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100 }}>
+    <div
+      className={`transition duration-500  ${active ? "navbar active" : "navbar"}`}
+      style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100, transitionDelay: active ? '0.30s' : '0.40s' }}
+    >
       <div className="container">
         <div className="flex items-center justify-between relative z-10">
           <div className="px-4">
-            <img src={image} alt="peyek" style={{ width: 100, height: 100 }} />
+            <img src={image} alt="peyek" style={{ width: 80, height: 80 }} />
           </div>
           <div className="flex items-center px-4">
             <button
@@ -52,7 +56,7 @@ const MenuPage = () => {
             <ul
               className={`md:flex md:items-center md:pb-0 pb-10 absolute md:static text-center shadow-lg md:z-auto z-[-1] left-0 w-full md:w-auto cursor-pointer transition-all duration-500 ease-out md:shadow-none ${
                 open ? "top-20" : "top-[-490px]"
-              }`}
+              } ${open ? "text-black" : ""} ${open ? "bg-white" : ""}`}
             >
               {navigationData.map((link) => (
                 <li
@@ -62,6 +66,9 @@ const MenuPage = () => {
                   <Link to={link.url}>{link.name}</Link>
                 </li>
               ))}
+              <button className="px-5">
+                <Cart />
+              </button>
             </ul>
           </div>
         </div>
